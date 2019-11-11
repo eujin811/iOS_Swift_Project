@@ -1,0 +1,6 @@
+# Custom
+
+hidden/
+*.pem
+*.java
+confidential.*
