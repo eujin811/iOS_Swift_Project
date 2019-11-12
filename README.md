@@ -2,7 +2,9 @@
 
 ## User Name : YOUJIN KIM
 
-## hobby : eating
+-----
+
+<h1> Git </h1> 
 
 
-## luch menu : bab cha
+
