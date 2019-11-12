@@ -1,6 +1,8 @@
 # Custom
 
+
 hidden/
 *.pem
 *.java
 confidential.*
+.DS_Store
