@@ -3,9 +3,9 @@
 
 
 <h1> Git </h1>
----
+-----
 
-~branch~
+*branch*
 
 
 
