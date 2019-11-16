@@ -99,6 +99,18 @@ minority(num: 17)
 참고로 피보나치 수열은 이전 두 수의 합이 다음 수가 되는 수열
 e.g.  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ....
 함수 호출 시 입력받은 숫자가 4인 경우 피보나치 수열의 4번째 위치인 2 출력*/
+func fibo(num1: Int) -> Int{
+    var arrFibo = [0, 1]
+    for i in 2...num1{
+        arrFibo.append(arrFibo[i-1]+arrFibo[i-2])
+    }
+    arrFibo
+
+    return arrFibo[num1]
+}
+
+fibo(num1: 6)
+
 
 //입력받은 숫자 index
 
@@ -106,3 +118,19 @@ e.g.  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ....
 (공식 - 매 4년 마다 윤년. 매 100년 째에는 윤년이 아님. 매 400년 째에는 윤년)
 ex) 윤년O 예시 - 160, 204, 400, 1996, 2000, 2800
     윤년X 예시 - 200, 300, 500, 600, 1900, 2100*/
+
+func year(num1: Int) -> Bool{
+    
+    if( num1 % 100 == 0){
+        if( num1 % 4 == 0 ){
+            return true
+        }
+        return false
+    }
+    else if (num1 % 4 == 0){
+        return true
+    }
+    else{
+        return false
+    }
+}
