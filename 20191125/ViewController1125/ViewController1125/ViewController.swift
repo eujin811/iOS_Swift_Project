@@ -58,9 +58,17 @@ class ViewController: UIViewController {
 //        nextViewCon.numTextLabel.text = String(lableCount)
         
         // MARK:- 순서 바꾸면 왜? 백그라운드 컬러 바꿀때 present 실행 안됬는데도 secondeViewControllerㅇㅔ viewDidLoad 실행됨
-        nextViewCon.inputLabelCount = lableCount
-        nextViewCon.view.backgroundColor = .systemPink
+        
+        print("Next View Loaded: \(nextViewCon.isViewLoaded)")
+        
+        nextViewCon.view.backgroundColor = .systemPink              //
+        print("Next View Loaded: \(nextViewCon.isViewLoaded)")
+        
+        print("LabelCount : ", lableCount)
+        nextViewCon.numTextLabel.text = String(lableCount)
+        
 
+        
         print("첫째: \(lableCount)")
         present(nextViewCon, animated: true)
     }

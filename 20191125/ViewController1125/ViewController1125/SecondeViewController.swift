@@ -12,29 +12,27 @@ class SecondeViewController: UIViewController {
     let numTextLabel = UILabel()
     let titleLable = UILabel()
     let changeButton = UIButton(type: .system)
-    var inputLabelCount = 0
     
     override func loadView() {
         super.loadView()
+        print("------------2 Load View------------")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("------------2 viewDidLoad------------")
         // Do any additional setup after loading the view.
-        print("둘쨰: ",inputLabelCount)
         setUpUI()
     }
     
     func setUpUI(){
-          
-           
            titleLable.frame = CGRect(x: 150, y: 100, width: 300, height: 100)
            titleLable.text = "두번째 화면"
            view.addSubview(titleLable)
            
            numTextLabel.frame = CGRect(x: 150, y: 300, width: 200, height: 100)
-           numTextLabel.text = String(inputLabelCount)
+//           numTextLabel.text = String(inputLabelCount)
+        
            view.addSubview(numTextLabel)
            
            changeButton.frame = CGRect(x: 200, y: 450, width: 200, height: 100)
