@@ -31,7 +31,7 @@ class ViewController: UIViewController {
              let greenView = setupSubView(size: decreasedRectFrame(from: redView.frame), color: .green)
              redView.addSubview(greenView)
             
-            let vllView =setupSubView(size: desc, color: <#T##UIColor#>)
+            let vllView = setupSubView(size: desc, color: <#T##UIColor#>)
          }
          func addSubviewsUsingLoop() {
              var colors: [UIColor] = [.blue, .red, .green]
