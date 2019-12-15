@@ -10,21 +10,20 @@ import UIKit
 
 class SecondeViewController: UIViewController {
 
+    private let idLabel = UILabel()
+    private let logOutBtn = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setUpUI()
+        
+    }
+    
+    private func setUpUI(){
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -49,14 +49,36 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //임의의 ID & Password
+        anyIDPasswordData()
+        
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         attribute()
         setUpUI()
     }
+    
+    
+    // MARK: 임의 ID & Password
+    private func anyIDPasswordData(){
+        
+           // value: Any? forKey: String
+        UserDefaults.standard.set(["euji8@naver.com":"1111"], forKey: UserInfo.user)
+        
+        UserDefaults.standard.set(["jinjin@gmail.com":"1234"], forKey: UserInfo.user)
+        
+    }
+    
+    // MARK: -UI Setting
     func setUpUI(){
-
+        
+        //textFieldDalegate
         //델리게이트 구현부 2
-        //        emailTextField.delegate = self
-        //        passwordTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         view.addSubview(mainImage)
         view.addSubview(view1)
@@ -79,7 +101,7 @@ class LoginViewController: UIViewController {
             mainImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             mainImage.heightAnchor.constraint(equalToConstant: 100),
             mainImage.widthAnchor.constraint(equalToConstant: 300)
-            ])
+        ])
         
         view2.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -104,7 +126,7 @@ class LoginViewController: UIViewController {
             view3.heightAnchor.constraint(equalToConstant: viewLine),
             view3.widthAnchor.constraint(equalToConstant: viewLine)
         ])
-   
+        
         singInButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             singInButton.bottomAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.bottomAnchor, multiplier: -50),
@@ -115,12 +137,12 @@ class LoginViewController: UIViewController {
         
         
         line2.translatesAutoresizingMaskIntoConstraints = false
-              NSLayoutConstraint.activate([
-                line2.bottomAnchor.constraint(equalTo: singInButton.topAnchor, constant: -60),
-                line2.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-                line2.widthAnchor.constraint(equalToConstant: 200),
-                line2.heightAnchor.constraint(equalToConstant: 1)
-              ])
+        NSLayoutConstraint.activate([
+            line2.bottomAnchor.constraint(equalTo: singInButton.topAnchor, constant: -60),
+            line2.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            line2.widthAnchor.constraint(equalToConstant: 200),
+            line2.heightAnchor.constraint(equalToConstant: 1)
+        ])
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -145,7 +167,7 @@ class LoginViewController: UIViewController {
             emailTextField.widthAnchor.constraint(equalToConstant: 200),
             emailTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
-      
+        
         passwordImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             passwordImage.bottomAnchor.constraint(equalTo: passwordTextField.lastBaselineAnchor, constant: 0),
@@ -164,6 +186,8 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    // MARK: -UI attribute
     private func attribute() {
         mainImage.image = UIImage(named: "fastcampus_logo")
         
@@ -193,43 +217,47 @@ class LoginViewController: UIViewController {
         
         passwordImage.image = UIImage(named: "password")
         
-//      signButton.setTitle(“Sign In”, for: .normal)
-//      signButton.setTitleColor( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-//      signButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-//      signButton.backgroundColor = .darkGray
-//      signButton.layer.cornerRadius = 10
-//      signButton.addTarget(self, action: #selector(didTapSignButton), for: .touchUpInside)
-//
+        //      signButton.setTitle(“Sign In”, for: .normal)
+        //      signButton.setTitleColor( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        //      signButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        //      signButton.backgroundColor = .darkGray
+        //      signButton.layer.cornerRadius = 10
+        //      signButton.addTarget(self, action: #selector(didTapSignButton), for: .touchUpInside)
+        //
     }
     
     
-    
+    // MARK: - didTapButton
     @objc private func didTapButton(_ sender: UIButton){
         
+        /*
+         guard var flag = UserDefaults.standard.array(forKey: "animal") else{ return }
+                
+                flagLabel.text = flag[0] as! String
+                flagImgae.image = UIImage(named: flag[1] as! String)
+                
+         */
+        
         //1. iOS 13 이상
-//        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-//            //새윈도우 만듬.
-//            let window = UIWindow(windowScene: windowScene)
-//            window.rootViewController = SecondeViewController()
-//            
-//            //어디서 윈도우 놓는가? -> 신델리게이트에 접근해서 바꾸어준다.
-//            let sceneDelegate = windowScene.delegate as? SceneDelegate
-//            sceneDelegate?.window = window           //
-//            window.makeKeyAndVisible()      //화면 바뀜.
-//        } else{ //iOS 12이하.     ->AppDelegate에 window  추가해야한다.
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            let window = UIWindow(frame: UIScreen.main.bounds)
-//            window.rootViewController = SecondeViewController()
-//            window.makeKeyAndVisible()
-//            appDelegate.window = window
-//        }
-//        
+        //        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+        //            //새윈도우 만듬.
+        //            let window = UIWindow(windowScene: windowScene)
+        //            window.rootViewController = SecondeViewController()
+        //
+        //            //어디서 윈도우 놓는가? -> 신델리게이트에 접근해서 바꾸어준다.
+        //            let sceneDelegate = windowScene.delegate as? SceneDelegate
+        //            sceneDelegate?.window = window           //
+        //            window.makeKeyAndVisible()      //화면 바뀜.
+        //        } else{ //iOS 12이하.     ->AppDelegate에 window  추가해야한다.
+        //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //            let window = UIWindow(frame: UIScreen.main.bounds)
+        //            window.rootViewController = SecondeViewController()
+        //            window.makeKeyAndVisible()
+        //            appDelegate.window = window
+        //        }
+        //        
         
-        ////        guard var flag = UserDefaults.standard.array(forKey: "animal") else{ return }
-        // UserDefaults.standard.set(["강아지","dog"], forKey: "animal")
-        //           print(UserDefaults.standard.object(forKey: "animal"))
-        //           print(type(of: UserDefaults.standard.object(forKey: "animal")))
-        
+   
     }
     
     deinit{
@@ -237,7 +265,38 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate Extension
 extension LoginViewController: UITextFieldDelegate{
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //키보드 내릴때
+//        inputText.resignFirstResponder()
+        
+        
+        return true
+    }
     
+    //값이 입력될때 true -> 값입력되는게 밑에 뜰때. false -> 입력안되게.
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+////        //a 있으면 밑에 값 안뜨고 입력안됨.
+//        return string == "a" ? false : true
+//    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+//        guard let text = inputText.text else {return}
+//        switch text {
+//        case "red":
+//            firstView.backgroundColor = .red
+//        case "blue":
+//            firstView.backgroundColor = .blue
+//        case "black":
+//            firstView.backgroundColor = .black
+//        default:
+//            firstView.backgroundColor = .gray
+//        }
+        
+    }
 }
 

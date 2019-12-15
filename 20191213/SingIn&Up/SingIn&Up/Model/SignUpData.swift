@@ -9,3 +9,7 @@
 import Foundation
 
 
+struct UserInfo{
+    static let id = "ID"
+    static let user = "User"
+}
