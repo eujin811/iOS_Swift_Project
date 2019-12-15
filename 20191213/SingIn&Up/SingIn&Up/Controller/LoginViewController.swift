@@ -9,13 +9,11 @@
 import UIKit
 /*
  // 스토리보드, 코드 자유
- 1. 별도 첨부한 이미지와 같이 UI 구현. 원하는 형식으로 바꿔도 무관
- 2. 텍스트 필드는 UITextFieldDelegate 이용
+ 
  3. 키보드에 의해 아이디와 비밀번호 textField가 가릴 수 있으므로
  키보드가 나타날 때는 텍스트필드 위로 끌어올리고 내려갈 때는 같이 내려가기
- 4. 미리 설정해둔 아이디와 비밀번호가 동일할 경우 로그인이 완료된 메인 화면으로 이동
- 5. 메인 화면에서는 입력받은 아이디를 출력하는 Label을 띄우고
- 다시 로그인 화면으로 돌아갈 수 있는 Sign Out 버튼 구성
+
+
  [ 추가 기능 (1) ]
  1. 미리 설정해둔 아이디와 비밀번호가 다를 경우 텍스트필드의 바탕화면을 일시적으로 빨갛게 만들었다가 원상 복구하기
  2. 텍스트필드에 입력할 수 있는 최대 글자 수는 16자까지
@@ -45,7 +43,9 @@ class LoginViewController: UIViewController {
     
     private let singInButton =  UIButton()
     
-    
+    // MARK: - email, password 입력된 text
+    private var inputEmail:String?
+    private var inputPassword:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +64,11 @@ class LoginViewController: UIViewController {
     
     // MARK: 임의 ID & Password
     private func anyIDPasswordData(){
-        
+        print("anyIDPasswordData load")
            // value: Any? forKey: String
-        UserDefaults.standard.set(["euji8@naver.com":"1111"], forKey: UserInfo.user)
-        
         UserDefaults.standard.set(["jinjin@gmail.com":"1234"], forKey: UserInfo.user)
-        
+        print("총",UserDefaults.standard.object(forKey: UserInfo.user))
+        print("dic", UserDefaults.standard.dictionary(forKey: UserInfo.user))
     }
     
     // MARK: -UI Setting
@@ -204,8 +203,10 @@ class LoginViewController: UIViewController {
         singInButton.setTitleColor(.white, for: .normal)
         singInButton.layer.cornerRadius = 15
         singInButton.setTitle("SignIn", for: .normal)
+        singInButton.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         
         passwordTextField.placeholder = "비밀번호를 입력해주세요."
+        passwordTextField.isSecureTextEntry = true
         
         line2.backgroundColor = .gray
         
@@ -217,26 +218,41 @@ class LoginViewController: UIViewController {
         
         passwordImage.image = UIImage(named: "password")
         
-        //      signButton.setTitle(“Sign In”, for: .normal)
-        //      signButton.setTitleColor( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        //      signButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        //      signButton.backgroundColor = .darkGray
-        //      signButton.layer.cornerRadius = 10
-        //      signButton.addTarget(self, action: #selector(didTapSignButton), for: .touchUpInside)
-        //
     }
     
     
     // MARK: - didTapButton
     @objc private func didTapButton(_ sender: UIButton){
+//
+//        if inputEmail == nil || inputPassword == nil {
+//            print("didTapButtonFunc 종료")
+//            return
+//        }
+        guard let emailText = inputEmail as? String else {return}
+        guard let passwordText = inputPassword as? String else {return}
         
-        /*
-         guard var flag = UserDefaults.standard.array(forKey: "animal") else{ return }
-                
-                flagLabel.text = flag[0] as! String
-                flagImgae.image = UIImage(named: flag[1] as! String)
-                
-         */
+        
+        print("didTapButtonFunc: email, password vlaue ok")
+        
+        // MARK: - didTapButton 유저정보 일치 확인부분.
+        guard var loginInfo = UserDefaults.standard.dictionary(forKey: UserInfo.user) as? [String:String] else { return }
+     
+        
+        print("loginInfo type: ",type(of: loginInfo[emailText]))
+        print(loginInfo[emailText])
+        if loginInfo[emailText] != passwordText{
+            print("비밀번호 일치 안함.")
+            print("loginInfo: ",loginInfo[emailText]," passwordText: ", passwordText)
+            return
+        }
+        
+        
+        print("비밀번호 일치.")
+        
+        let secondeVC = SecondeViewController()
+        secondeVC.idLabel.text = emailText
+        
+        present(secondeVC,animated: true)
         
         //1. iOS 13 이상
         //        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
@@ -267,16 +283,21 @@ class LoginViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate Extension
 extension LoginViewController: UITextFieldDelegate{
-
+    
+    //textReturn 키보드 눌렸을때.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //키보드 내릴때
-//        inputText.resignFirstResponder()
-        
+
+//        if emailTextField.text != "@" {
+//            print("이메일 형식 잘못됨.")
+//            return false
+//        }
+//        print("이메일 형식 정상")
         
         return true
     }
     
     //값이 입력될때 true -> 값입력되는게 밑에 뜰때. false -> 입력안되게.
+    //textField값 변경될때.
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //
 ////        //a 있으면 밑에 값 안뜨고 입력안됨.
@@ -285,17 +306,19 @@ extension LoginViewController: UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-//        guard let text = inputText.text else {return}
-//        switch text {
-//        case "red":
-//            firstView.backgroundColor = .red
-//        case "blue":
-//            firstView.backgroundColor = .blue
-//        case "black":
-//            firstView.backgroundColor = .black
-//        default:
-//            firstView.backgroundColor = .gray
-//        }
+        switch textField {
+        case emailTextField:
+//            guard let email = textField.text as? String else{ return }
+//            inputEmail = email
+            inputEmail = textField.text
+        case passwordTextField:
+//            guard let password = textField.text as? String else{ return }
+//            inputPassword = password
+            inputPassword = textField.text
+        default:
+            break
+        }
+
         
     }
 }
