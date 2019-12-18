@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "08B2ED78-63BC-4349-AD33-E29C8EE2EFBE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F91ABD28-0102-4EBE-B158-44128239A8ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableViewPractice/TableViewRefresh.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "description"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "F91ABD28-0102-4EBE-B158-44128239A8ED - 985f9291cb30d036"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewPractice.TableViewRefresh.tableView.getter : __C.UITableView"
+                  moduleName = "TableViewPractice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youjinmac/Desktop/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3/TableViewPractice%20-%20Starter/TableViewPractice/TableViewRefresh.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "F91ABD28-0102-4EBE-B158-44128239A8ED - 8c0b6d86751ac62b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewPractice.TableViewRefresh.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TableViewPractice.TableViewRefresh"
+                  moduleName = "TableViewPractice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youjinmac/Desktop/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3/TableViewPractice%20-%20Starter/TableViewPractice/TableViewRefresh.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "F91ABD28-0102-4EBE-B158-44128239A8ED - 9de24f9e6dafd4ee"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewPractice.TableViewRefresh.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TableViewPractice.TableViewRefresh&gt;"
+                  moduleName = "TableViewPractice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youjinmac/Desktop/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3/TableViewPractice%20-%20Starter/TableViewPractice/TableViewRefresh.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
