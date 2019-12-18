@@ -95,12 +95,16 @@ class LoginViewController: UIViewController {
         let miniImageLine:CGFloat = 20
         
         mainImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            mainImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            mainImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainImage.heightAnchor.constraint(equalToConstant: 100),
-            mainImage.widthAnchor.constraint(equalToConstant: 300)
-        ])
+        mainImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        mainImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        mainImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        mainImage.widthAnchor.constraint(equalToConstant: 300).isActive = true
+//        NSLayoutConstraint.activate([
+//            mainImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+//            mainImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            mainImage.heightAnchor.constraint(equalToConstant: 100),
+//            mainImage.widthAnchor.constraint(equalToConstant: 300)
+//        ])
         
         view2.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -208,9 +212,12 @@ class LoginViewController: UIViewController {
         passwordTextField.placeholder = "비밀번호를 입력해주세요."
         passwordTextField.isSecureTextEntry = true
         
+        
         line2.backgroundColor = .gray
         
         emailTextField.placeholder = "email을 입력하세요."
+        // MARK: - 추가사항 emailAddress
+        emailTextField.keyboardType = .emailAddress
         
         line1.backgroundColor = .gray
         
@@ -218,6 +225,7 @@ class LoginViewController: UIViewController {
         
         passwordImage.image = UIImage(named: "password")
         
+//        UIKeyboardAppearance.
     }
     
     
