@@ -17,6 +17,7 @@
 		52B52588225E0CAD00E3CDD4 /* TableViewRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B52587225E0CAD00E3CDD4 /* TableViewRefresh.swift */; };
 		52B5258A225E0CB700E3CDD4 /* TableViewMultipleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B52589225E0CB700E3CDD4 /* TableViewMultipleSelection.swift */; };
 		52B5258C225E0CC000E3CDD4 /* TableViewAccessoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5258B225E0CC000E3CDD4 /* TableViewAccessoryType.swift */; };
+		962481E523AA580400455D6E /* Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962481E423AA580400455D6E /* Identify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		52B52587225E0CAD00E3CDD4 /* TableViewRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewRefresh.swift; sourceTree = "<group>"; };
 		52B52589225E0CB700E3CDD4 /* TableViewMultipleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMultipleSelection.swift; sourceTree = "<group>"; };
 		52B5258B225E0CC000E3CDD4 /* TableViewAccessoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAccessoryType.swift; sourceTree = "<group>"; };
+		962481E423AA580400455D6E /* Identify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		52B5256E225E0BCC00E3CDD4 /* TableViewPractice */ = {
 			isa = PBXGroup;
 			children = (
+				962481E323AA57CF00455D6E /* Model */,
 				52B5256F225E0BCC00E3CDD4 /* AppDelegate.swift */,
 				52B52581225E0C4A00E3CDD4 /* ListViewController.swift */,
 				52B52583225E0C9600E3CDD4 /* TableViewNumbers.swift */,
@@ -77,6 +80,14 @@
 				52B5257B225E0BCE00E3CDD4 /* Info.plist */,
 			);
 			path = TableViewPractice;
+			sourceTree = "<group>";
+		};
+		962481E323AA57CF00455D6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				962481E423AA580400455D6E /* Identify.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				52B5258A225E0CB700E3CDD4 /* TableViewMultipleSelection.swift in Sources */,
 				52B52570225E0BCC00E3CDD4 /* AppDelegate.swift in Sources */,
 				52B52588225E0CAD00E3CDD4 /* TableViewRefresh.swift in Sources */,
+				962481E523AA580400455D6E /* Identify.swift in Sources */,
 				52B52586225E0CA300E3CDD4 /* TableViewSection.swift in Sources */,
 				52B52582225E0C4A00E3CDD4 /* ListViewController.swift in Sources */,
 			);

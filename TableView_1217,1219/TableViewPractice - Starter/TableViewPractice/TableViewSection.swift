@@ -22,12 +22,48 @@ final class TableViewSection: UIViewController {
   override var description: String { "Practice 2 - Section" }
   
 //  let data = [5, 7, 16, 19, 22, 29, 30, 39, 44, 48, 50]
-  let data = Array(1...100)
+//     let data = Array(1...100)
+    let startNum = 5
+    let finishNum = 100
+    lazy var data = Array(startNum...finishNum)
+
+//    var dataArray = [Int]()
+    
+    //딕셔너리는 정렬이 안되있으니까 배열에 넣고 소트해서 정렬.
+    lazy var sectionTitle: [Int] = dataDic.keys.sorted()
+    var dataDic = [Int:[Int]]()
+    
+    // MARK: -dataCell과 섹션의 숫자들 관련 func
+    private func dataCellSection(){
+        print("진입! 함수 -dataCellSection ")
+        
+        let inputDataCell = data.count
+        print("dataCellSection의 inputDataCell = ",inputDataCell)
+        //시작 숫자붜 데이터 크기만큼 for문
+        for i in 0...inputDataCell-1{
+            //cell 숫자 / 10 한것의 섹션에 추가!
+//            let verify = dataArray[i] / 10
+            let verify = data[i] / 10
+            print("for문 i = ",i,"data[i] = ",verify)
+//            dataDic[verify]?.append(dataArray[i])
+//            dataDic[verify]?.append(data[i])
+            dataDic[verify]?.append(data[i])
+            print("for in dataDic[verify]",dataDic[verify])
+        }
+        print("dataDic",dataDic)
+    }
+    
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    //dataCell과 Section 정리한 함수
+    dataCellSection()
+    
     let tableView = UITableView(frame: view.frame)
+    tableView.dataSource = self
+//    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellID")
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: IdentifyGroup.cellIdentify)
     view.addSubview(tableView)
     
   }
@@ -37,12 +73,40 @@ final class TableViewSection: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension TableViewSection: UITableViewDataSource {
+    
+    
+    //섹션에 몇개 나타낼지.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("numberOfSections:섹션 몇개 나타낼지")
+        print("dataDic",dataDic.count)
+        return dataDic.count
+    }
+    //섹션 헤더추가.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        print("titleForHeaderInSection: 섹션헤더 추가.")
+        print("sectionTitle",sectionTitle[section])
+        return "\(sectionTitle[section])"
+    }
+    
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    //몇개의 행.
+    // dataDic의 key값의 value 배열 크기만큼의 행을 띄워줌.
+    print("numberOfRowInSection:행 몇개띄워줄꺼?")
+    let title = dataDic.keys.sorted()
+    let key = title[section]
+    return dataDic[key]!.count
+//    return dataDic[sectionTitle[section]]!.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath)
+    print("cellForRowAt: 셀내부요소 채우는거!")
+    let cell = tableView.dequeueReusableCell(withIdentifier: IdentifyGroup.cellIdentify, for: indexPath)
+//    cell.textLabel?.text = "\(data[indexPath.row])"
+    let localData = dataDic[sectionTitle[indexPath.section]]!  //1,2,3,4
+    
+    cell.textLabel?.text = "\(localData[indexPath.row])"
+    
     return cell
   }
 }
+
