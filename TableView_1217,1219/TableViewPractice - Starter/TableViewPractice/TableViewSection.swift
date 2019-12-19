@@ -33,40 +33,52 @@ final class TableViewSection: UIViewController {
     lazy var sectionTitle: [Int] = dataDic.keys.sorted()
     var dataDic = [Int:[Int]]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //dataCell과 Section 정리한 함수
+        dataCellSection()
+        
+        let tableView = UITableView(frame: view.frame)
+        tableView.dataSource = self
+        //    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellID")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: IdentifyGroup.cellIdentify)
+        view.addSubview(tableView)
+        
+    }
+    
+    
     // MARK: -dataCell과 섹션의 숫자들 관련 func
     private func dataCellSection(){
-        print("진입! 함수 -dataCellSection ")
-        
         let inputDataCell = data.count
-        print("dataCellSection의 inputDataCell = ",inputDataCell)
         //시작 숫자붜 데이터 크기만큼 for문
         for i in 0...inputDataCell-1{
-            //cell 숫자 / 10 한것의 섹션에 추가!
-//            let verify = dataArray[i] / 10
+
             let verify = data[i] / 10
-            print("for문 i = ",i,"data[i] = ",verify)
-//            dataDic[verify]?.append(dataArray[i])
+
 //            dataDic[verify]?.append(data[i])
-            dataDic[verify]?.append(data[i])
-            print("for in dataDic[verify]",dataDic[verify])
+            if var value = dataDic[verify] {
+                value.append(data[i])
+                dataDic[verify] = value
+            } else {
+                dataDic[verify] = [data[i]]
+            }
+            
         }
+        /*
+         for i in data {
+          if let _ = dataDic[i / 10] {
+            dataDic[i/10].append(i)
+          } else {
+            dataDic[i/10] = [i]
+            }
+         }
+         */
         print("dataDic",dataDic)
     }
     
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    //dataCell과 Section 정리한 함수
-    dataCellSection()
-    
-    let tableView = UITableView(frame: view.frame)
-    tableView.dataSource = self
-//    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellID")
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: IdentifyGroup.cellIdentify)
-    view.addSubview(tableView)
-    
-  }
+
 }
 
 
