@@ -32,9 +32,12 @@ final class ViewController: UIViewController {
     
     private var result = 0
     private var calculatorNumArr = [Character]()
-    //    private var calculatorArr = [String?]()
-    //    private var calculatorArr: [String]?
-    private var calculatorArr = [String]()
+    //    private var calculatorNumArr:[Character]?
+    
+    //    private var calculatorArr = [String]()
+    private var firstNum = 0
+    private var symbol:Character?
+    private var secondeNum:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,127 +95,147 @@ final class ViewController: UIViewController {
     
     // MARK: -기호버튼 func
     @IBAction func symbolDidTapButton(_ sender: UIButton) {
+        
+        let inputNum = Int(String(calculatorNumArr)) ?? 0
+        calculatorNumArr.removeAll()
+        
+        // firsNum 0 이면 입력숫자 firstNum에 아니면 SecondNum에 넣기.
+        if firstNum == 0 {
+            firstNum = inputNum
+        } else {
+            secondeNum = inputNum
+        }
+        
         switch sender {
         case plusButton:
-            //calculatorNumArr에 있는 숫자와 기호 calculatorArr에 넣고 calculatorNumArr 배열 비움.
-            
-            //calculatorNumArr에 있는 것들 숫자로 바꾸고 calculatorArr에 저장.
-            
-            
-            //연산자 계속 들어오면 마지막꺼 하려고.
-            if calculatorArr.count-1 >= 2 {
-                calculatorArr.remove(at: 1)
-                calculatorArr.insert(String(calculatorNumArr), at: 2)
-            } else if calculatorArr.count < 1 {
-                calculatorArr.append(String(calculatorNumArr))
-            }
-            
-//            calculatorArr.append(String(calculatorNumArr))
-            calculatorNumArr.removeAll()
-            
-            calculatorArr.insert("+", at: 1)
-//            calculatorArr[1] = "+"
-            
-            print("calculatorArr: \(calculatorArr), calculatorNumArr: \(calculatorNumArr)")
-            
+            symbol = "+"
         case subtractionButton:
-            calculatorArr.append(String(calculatorNumArr))
-            calculatorNumArr.removeAll()
-            if calculatorArr.count > 2 {
-                calculatorArr.remove(at: 1)
-            }
-            calculatorArr.insert("-", at: 1)
-            print("calculatorArr: \(calculatorArr), calculatorNumArr: \(calculatorNumArr)")
+            symbol = "-"
             
         case multiplationButton:
-            calculatorArr.append(String(calculatorNumArr))
-            calculatorNumArr.removeAll()
-            if calculatorArr.count > 2 {
-                calculatorArr.remove(at: 1)
-            }
-            calculatorArr.insert("*", at: 1)
-            print("calculatorArr: \(calculatorArr), calculatorNumArr: \(calculatorNumArr)")
-            
+            symbol = "*"
         case divisionButton:
-            calculatorArr.append(String(calculatorNumArr))
-            calculatorNumArr.removeAll()
-            if calculatorArr.count > 2 {
-                calculatorArr.remove(at: 1)
-            }
-            calculatorArr.insert("/", at: 1)
-            print("calculatorArr: \(calculatorArr), calculatorNumArr: \(calculatorNumArr)")
-            
-        // MARK: - 합계버튼 " = " Click
-        case sumButton:
-            //calculatorArr에서 기호 탐색하고 거기에 맞는 계산, 두번째 숫자 비었으면 2넣고.
-            
-            
-            if calculatorArr.count == 1 {
-                displayLabel.text = String(calculatorNumArr)
-            } else if calculatorArr.count == 0 {
-                displayLabel.text = "0"
-            }
-                      
-//            if calculatorArr.count == 2
-                switch calculatorArr[1] {
-                case "+":
-                    print("+ 진입")
-                    if calculatorArr.count == 2 {
-                    result = Int(calculatorArr[0])! + Int(calculatorArr[0])!
-//                    calculatorArr.removeAll()
-//                    calculatorArr.append(String(result))
-                    displayLabel.text = "\(result)"
-                    } else { // count 3 이상일 때.
-                        result = Int(calculatorArr[0])! + Int(calculatorArr[2])!
-                        displayLabel.text = "\(result)"
-                        calculatorArr.remove(at: 0)
-                        calculatorArr.insert(String(result), at: 0)
-                    }
-                    
-                    
-                case "-":
-                    print("- 진입")
-                    if calculatorArr.count == 2 {
-                    result = Int(calculatorArr[0])! - Int(calculatorArr[0])!
-                    displayLabel.text = "\(result)"
-                    } else { // count 3 이상일 때.
-                        
-                    }
-                case "*":
-                    print("* 진입")
-                    if calculatorArr.count == 2 {
-                    result = Int(calculatorArr[0])! * Int(calculatorArr[0])!
-                    displayLabel.text = "\(result)"
-                    }
-                    else { // count 3 이상일 때.
-                        
-                    }
-                case "/":
-                    print("/ 진입")
-                    if calculatorArr.count == 2 {
-                    result = Int(calculatorArr[0])! / Int(calculatorArr[0])!
-                    displayLabel.text = "\(result)"
-                    }
-                    else { // count 3 이상일 때.
-                        
-                    }
-                default:
-                    break
-                }
-            print("in didTap Func case Sum calculatorArr:",calculatorArr)
-            
+            symbol = "/"
         default:
             break
         }
+    }
+    
+    // MARK: - Button: " = "  - 입력숫자 하나일 때 ok
+    @IBAction func sumDidTapButton(_ sender: UIButton) {
+        // MARK: - 합계버튼 " = " Click
+        
+        let inputNum = Int(String(calculatorNumArr)) ?? 0
+        calculatorNumArr.removeAll()
+
+        // 연산자와 두번째 숫자 없을때.
+        if symbol == nil && secondeNum == nil {
+            firstNum = inputNum
+            displayLabel.text = "\(firstNum)"
+            return
+        } else if calculatorNumArr != nil && secondeNum != nil {
+            // 연산자와 두번쨰 입력숫자 모두 있을때.
+            secondeNum = inputNum
+        }
+        
+        //            if calculatorArr.count == 2
+        switch symbol {
+        case "+":
+            print("+ 진입")
+            //두번째 숫자 없을 떄.
+            if symbol != nil && secondeNum == nil  {
+                result = add(secondNumOk: false)
+                displayLabel.text = "\(result)"
+                firstNum = result
+            } else { // firstNum o, symbol o, secondNum o
+                result = add(secondNumOk: true)
+                displayLabel.text = "\(result)"
+                symSecondNil()
+                firstNum = result
+            }
+            
+        case "-":
+            print("- 진입")
+            //            if calculatorArr.count == 2 {
+            //                result = Int(calculatorArr[0])! - Int(calculatorArr[0])!
+            //                displayLabel.text = "\(result)"
+            //            } else { // count 3 이상일 때.
+            //
+        //            }
+        case "*":
+            print("* 진입")
+            //            if calculatorArr.count == 2 {
+            //                result = Int(calculatorArr[0])! * Int(calculatorArr[0])!
+            //                displayLabel.text = "\(result)"
+            //            }
+            //            else { // count 3 이상일 때.
+            //
+        //            }
+        case "/":
+            print("/ 진입")
+            //            if calculatorArr.count == 2 {
+            //                result = Int(calculatorArr[0])! / Int(calculatorArr[0])!
+            //                displayLabel.text = "\(result)"
+            //            }
+            //            else { // count 3 이상일 때.
+            //
+        //            }
+        default:        //nil   일떄 아무일도 일어나지 않음.
+            break
+        }
+        print("in didTap Func case Sum firtstNum : \(firstNum), symbol: \(symbol), secondeNum: \(secondeNum)")
+        
     }
     
     // MARK: -clearButton OK
     @IBAction func allCelarDidTapButton(_ sender: UIButton) {
         result = 0
         calculatorNumArr.removeAll()
-        calculatorArr.removeAll()
+        
+        //        calculatorArr.removeAll()
+        firstNum = 0
+        symbol = nil
+        secondeNum = nil
+        
         displayLabel.text = "\(result)"
     }
     
+    // MARK: 더하기
+    private func add(secondNumOk: Bool) -> Int {
+        if secondNumOk == true {
+            return firstNum + secondeNum!
+        } else {
+            return firstNum + firstNum
+        }
+    }
     
+    // MARK: 빼기
+    private func sub(secondNumOk: Bool) -> Int {
+        if secondNumOk == true {
+            return firstNum - secondeNum!
+        } else {
+            return firstNum - firstNum
+        }
+    }
+    // MARK: 곱하기
+    private func multiply(secondNumOk: Bool) -> Int {
+        if secondNumOk == true {
+            return firstNum * secondeNum!
+        } else {
+            return firstNum * firstNum
+        }
+    }
+    // MARK: 나누기
+    private func division(secondNumOk: Bool) -> Int {
+        if secondNumOk == true {
+            return firstNum / secondeNum!
+        } else {
+            return firstNum / firstNum
+        }
+    }
+    
+    private func symSecondNil() {
+        symbol = nil
+        secondeNum = nil
+    }
 }

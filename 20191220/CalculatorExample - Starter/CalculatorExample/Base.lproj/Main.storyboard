@@ -117,7 +117,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="="/>
                                         <connections>
-                                            <action selector="symbolDidTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="X8M-fh-mxh"/>
+                                            <action selector="sumDidTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="ZEj-2I-36w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-nv-Lxc">
