@@ -143,9 +143,9 @@ final class ViewController: UIViewController {
         print("기호 함수: firstNum: \(firstNum), symbol: \(symbol), secondNum: \(secondeNum) \n 기호함수 종료 \n")
     }
     
-    // MARK: - Button: " = "  - 입력숫자 하나일 때 ok
+    // MARK: - Button: " = "
     @IBAction func sumDidTapButton(_ sender: UIButton) {
-        // MARK: - 합계버튼 " = " Click
+        
         print("********  sumDidTapButton  **********")
         
         let inputNum = Int(String(calculatorNumArr)) ?? 0
@@ -173,7 +173,7 @@ final class ViewController: UIViewController {
         
     }
     
-    // MARK: -clearButton OK
+    // MARK: -clearButton
     @IBAction func allCelarDidTapButton(_ sender: UIButton) {
         result = 0
         calculatorNumArr.removeAll()
@@ -184,6 +184,8 @@ final class ViewController: UIViewController {
         displayLabel.text = "\(result)"
     }
     
+    
+    // MARK: -계산함수.
     private func calculatorFunc() {
         switch symbol {
         case "+":
@@ -227,7 +229,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    // MARK: 더하기
+    // MARK: 더하기 함수
     private func add(secondNumOk: Bool) {
         if secondNumOk == true {
             result = firstNum + secondeNum!
@@ -240,7 +242,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    // MARK: 빼기
+    // MARK: 빼기 함수
     private func sub(secondNumOk: Bool) {
         if secondNumOk == true {
             result = firstNum - secondeNum!
@@ -252,7 +254,7 @@ final class ViewController: UIViewController {
             firstNum = result
         }
     }
-    // MARK: 곱하기
+    // MARK: 곱하기 함수
     private func multiply(secondNumOk: Bool) {
         if secondNumOk == true {
             result = firstNum * secondeNum!
@@ -265,7 +267,7 @@ final class ViewController: UIViewController {
 
         }
     }
-    // MARK: 나누기
+    // MARK: 나누기 함수
     private func division(secondNumOk: Bool){
         if secondNumOk == true {
             result = firstNum / secondeNum!

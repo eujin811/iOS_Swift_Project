@@ -13,7 +13,7 @@ import UIKit
 
 //[ 도전 과제 ]
  //1. 아래 두 클로저를 Syntax Optimization을 이용하여 최대한 줄여보기
-/*
+
  let someClosure: (String, String) -> Bool = { (s1: String, s2: String) -> Bool in
    let isAscending: Bool
    if s1 > s2 {
@@ -23,10 +23,27 @@ import UIKit
    }
    return isAscending
  }
- */
+ 
+let somClosure2: (String, String) -> Bool = { (s1: String, s2: String) -> Bool in
+        return s1 > s2
+        }
 
- let someClosure: (String, String) -> Bool = { $0 > $1 }
+let somClosure3: (String, String) -> Bool = { (s1: String, s2: String) in
+    return s1 > s2
+}
+
+let somClosure4: (String, String) -> Bool = { (s1, s2) in return s1 > s2}
+
+let somClosure5: (String, String) -> Bool = { return $0 > $1 }
+let somClosure6: (String, String) -> Bool = { $0 > $1 }
+let somClosure7: (String, String) -> Bool = (>)
+//{(s1, s2) in return s1 > s2}
+
+
+
+ let someClosure1: (String, String) -> Bool = { $0 > $1 }
 someClosure("hi","haha")
+
 
 
 //2

@@ -12,20 +12,34 @@ import UIKit
  task1 + task1
  */
 
-func addTwoValues(a: Int, b: Int) -> Int {
+
+
+func addTwoValue(a: Int, b: Int) -> Int {
     return a + b
 }
 
-let task1: Any = addTwoValues(a: 2, b: 3)
-
-task1
-type(of: task1)
+let task1: Any = addTwoValue(a: 2, b: 3)
 
 if task1 is Int {
     let sumTask = (task1 as! Int) + (task1 as! Int)
 }
 
 let casting = task1 as? Int
+
+//func addTwoValues(a: Int, b: Int) -> Int {
+//    return a + b
+//}
+//
+//let task1: Any = addTwoValues(a: 2, b: 3)
+//
+//task1
+//type(of: task1)
+//
+//if task1 is Int {
+//    let sumTask = (task1 as! Int) + (task1 as! Int)
+//}
+//
+//let casting = task1 as? Int
 
 
 
@@ -38,6 +52,11 @@ let casting = task1 as? Int
  (addTwoValues의 각 파라미터에는 원하는 값 입력)
  task2 + task2
  */
+
+var task3: Any = addTwoValue(a: 5, b: 7)
+
+var sumTesk2 = (task3 as! Int) + (task3 as! Int)
+
 
 var task2: Any = ({ (s1: Int, s2: Int) in
     s1 + s2
@@ -65,6 +84,31 @@ var sumTesk = (task2 as! Int) + (task2 as! Int)
  }
  }
  */
+
+
+class Car5 {}
+let values5: [Any] = [
+    0,
+    0.0,
+    (2.0, Double.pi),
+    Car5(),
+    { (str: String) -> Int in str.count }
+]
+
+for data in values5 {
+    switch data {
+    case _ where data is Int :
+        print(data," int")
+    case _ where data is Double :
+        print(data," Double")
+    case _ where data is Car5 :
+        print(data," Car5")
+    case _ where data is (String) ->Int :
+        print(data," (String) -> Int")
+    default:
+        print(data, "튜플타입")
+    }
+}
 
 
 class Car2 {}
@@ -115,6 +159,45 @@ for value in values {
  let isDoubleDecker: Bool
  }
  */
+class Vehicle2 {
+    let name: String
+    let maxSpeed: Int
+    
+    init(name: String, maxSpeed: Int) {
+        self.name = name
+        self.maxSpeed = maxSpeed
+    }
+   
+}
+class jinCar: Vehicle2 {
+    var modelYear: Int
+    var numberOfSeats: Int
+    
+
+    
+    init? (modelYear: Int, numberOfSeats: Int, name: String, maxSpeed: Int) {
+        guard numberOfSeats > 0 || modelYear > 0 else { return nil }
+        self.numberOfSeats = numberOfSeats
+        self.modelYear = modelYear
+        
+        super.init(name: name, maxSpeed: maxSpeed)
+    }
+}
+
+
+class Bus2: Vehicle2 {
+  let isDoubleDecker: Bool
+  init(name: String, maxSpeed: Int, isDoubleDecker: Bool) {
+    self.isDoubleDecker = isDoubleDecker
+    super.init(name: name, maxSpeed: maxSpeed)
+  }
+  
+  convenience init(name: String, isDoubleDecker: Bool) {
+    self.init(name: name, maxSpeed: 100, isDoubleDecker: isDoubleDecker)
+  }
+}
+
+
 
 class Vehicle {
     let name: String
