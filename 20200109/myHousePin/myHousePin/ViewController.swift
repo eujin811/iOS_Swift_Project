@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         let myHouseAddress = "대한민국 서울특별시 서초구 신반포로 10"
         
         let geocoder = CLGeocoder()
+        
         geocoder.geocodeAddressString(myHouseAddress) { (placeMark,error) in
             if error != nil {
                 return print(error!.localizedDescription)
