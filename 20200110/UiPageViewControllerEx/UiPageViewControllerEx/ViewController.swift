@@ -30,17 +30,7 @@ class ViewController: UIViewController {
         
     }
     private func attribute() {
-        firstView.backgroundColor = .lightGray
-        secondView.backgroundColor = .gray
-        thirdView.backgroundColor = .darkGray
-        quartView.backgroundColor = .black
         
-        view.addSubview(scrollView)
-        
-        view.addSubview(firstView)
-        view.addSubview(secondView)
-        view.addSubview(thirdView)
-        view.addSubview(quartView)
     }
 
 
