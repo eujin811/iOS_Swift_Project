@@ -19,9 +19,10 @@ import Foundation
 print("\n---------- [ 1번 문제 ] ----------\n")
 
 let numbers = [-2, -1, 0, 1, 2]
-numbers
 
+let firstResult = numbers.filter { $0 >= 0 }
 
+print(firstResult)
 
 
 
@@ -42,7 +43,7 @@ nestedArr
 
 
 
-
+print(nestedArr.reduce([Int]()) { $0 + $1 })
 
 
 
@@ -60,7 +61,23 @@ print("\n---------- [ 3번 문제 ] ----------\n")
 let array: [[Int?]] = [[1, 2, 3], [nil, 5], [6, nil], [nil]]
 
 
+//1 [[1, 2, 3], [5], [6], []]
+print("------- [ 3-1 ] ---------")
+let third1 = array.map { $0.compactMap { $0 } }
+print(third1)
+print()
 
+//2 [Optional(1), Optional(2), Optional(3), nil, Optional(5), Optional(6), nil, nil] 
+//let third2 = array.reduce( [Int]() ) { $0 + $1 }
+print("-------- [ 3-2 ] -------")
+let third2 = array.flatMap { $0 }
+print(third2)
+print()
 
+//3 [1, 2, 3, 5, 6]
+print("------[ 3-3 ] -------")
+let third3 = array.flatMap { $0.compactMap { $0 } }
+print(third3)
+print()
 
 //: [Next](@next)
