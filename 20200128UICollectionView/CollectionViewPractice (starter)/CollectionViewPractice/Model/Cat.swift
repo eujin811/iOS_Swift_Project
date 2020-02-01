@@ -9,7 +9,7 @@
 import Foundation
 
 struct Cat {
-    let list: [String] = [
+    static let list: [String] = [
         "cat0",
         "cat1",
         "cat2",
