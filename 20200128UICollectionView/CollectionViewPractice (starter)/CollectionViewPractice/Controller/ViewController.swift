@@ -37,15 +37,15 @@ class ViewController: UIViewController {
     // ui
     @IBOutlet var trashButton: UIBarButtonItem!
     
+    
     let flowLayout = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
     
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "CollectionView"
         setUpCollectionView()
-        setUpNavigationItem()
         
     }
     
@@ -53,13 +53,23 @@ class ViewController: UIViewController {
     private func setUpCollectionView() {
         setUpFlowLayout()
         
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
+        
+        view.addSubview(collectionView)
+        
     }
     
     private func setUpFlowLayout() {
         let margin:CGFloat = 20
         let padding:CGFloat = 10
         let setItemCount:CGFloat = 2
-        let itemSizeCGF:CGFloat = (view.frame.width - padding - margin) / setItemCount
+        
+        let contentSize:CGFloat = collectionView.bounds.width - (margin * 2) - (padding * (setItemCount - 1))
+        let itemSizeCGF:CGFloat = (contentSize / setItemCount).rounded(.down)
         
         flowLayout.itemSize =  CGSize(width: itemSizeCGF, height: itemSizeCGF)
         flowLayout.minimumInteritemSpacing = padding
@@ -68,9 +78,7 @@ class ViewController: UIViewController {
         
     }
     
-    private func setUpNavigationItem() {
-        
-    }
+ 
     
     
     
@@ -102,6 +110,18 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+        
+        let item = indexPath.item % catImageList.count
+        
+        cell.configure(image: UIImage(named: catImageList[item]))
+        
+        cell.backgroundColor = .white
+        return cell
     }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
 }
