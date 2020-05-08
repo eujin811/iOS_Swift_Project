@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 //    }
     
     @objc private func tapButton(_ sender: UIButton){
-        let myAlert = UIAlertController(title: "카운트추가?", message: "", preferredStyle: .alert)
+        let myAlert = UIAlertController(title: "카운트추가?", message: "ㅋㅋㅋ", preferredStyle: .alert)
         
 //        let addCountButton = UIAlertAction(title: "AddCount", style: .default){ (action) in self.count += 1; self.countLabel.text = String(self.count)}
 //        myAlert.addAction(addCountButton)
