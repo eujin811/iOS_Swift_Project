@@ -24,6 +24,7 @@
 		96BF6BB424CAABAE00F51886 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96BF6BB724CAABAE00F51886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96BF6BB924CAABAE00F51886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96BF6BBF24CAABDA00F51886 /* testJust.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testJust.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		96BF6BAA24CAABAC00F51886 /* Combine_Text */ = {
 			isa = PBXGroup;
 			children = (
+				96BF6BBF24CAABDA00F51886 /* testJust.playground */,
 				96BF6BAB24CAABAC00F51886 /* AppDelegate.swift */,
 				96BF6BAD24CAABAC00F51886 /* SceneDelegate.swift */,
 				96BF6BAF24CAABAC00F51886 /* ContentView.swift */,
