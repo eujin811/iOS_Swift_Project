@@ -29,7 +29,7 @@ struct ch03Navigation: View {
                     Text("마스터 뷰 2").font(.title)
                 }
                 
-            }.navigationBarTitle("네비게이션 링크.")
+            }.navigationBarTitle("네비게이션 링크.",displayMode: .large)
             //.navigationBarHidden(true)
             
         }

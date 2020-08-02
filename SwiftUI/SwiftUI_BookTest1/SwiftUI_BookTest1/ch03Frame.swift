@@ -15,7 +15,7 @@ struct ch03Frame: View {
 //        BasicFrame()
         
         // 크기제약조건
-        //LimitFrame()
+//        LimitFrame()
             
         // ideal 이상적 크기조건
 //        IdealFrameBefore()
@@ -131,7 +131,7 @@ struct fixedSizeFrame: View {
 struct LayoutPriorityFrame: View {
     var body: some View {
         VStack(spacing: 20) {
-            
+
             // 우선순위 미적용
             HStack {
                 Color.red

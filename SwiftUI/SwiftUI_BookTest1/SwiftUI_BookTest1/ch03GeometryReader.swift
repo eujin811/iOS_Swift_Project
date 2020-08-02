@@ -18,8 +18,8 @@ struct ch03GeometryReader: View {
        
         // GeometryProxy
         // 레이아웃 정보 자식뷰에게!
-//        GeometryProxyEX()
-        GeometryProxyFrame()
+        GeometryProxyEX()
+//        GeometryProxyFrame()
     }
 }
 
@@ -92,6 +92,7 @@ struct GeometryProxyFrame: View {
                 
                 GeometryReader {
                     self.contents(geometry: $0)
+
                 }
                 
             }.coordinateSpace(name: "VStackCS")
@@ -103,7 +104,10 @@ struct GeometryProxyFrame: View {
     
     func contents(geometry g: GeometryProxy) -> some View {
         VStack {
-            Text("Local").bold()
+            Text("Local").bold().onTapGesture {
+                print("Geometry \n",g,"--------------------")
+            }
+            
             Text(stringFormat(for: g.frame(in: .local).origin)) //지오메트리 리더의 bounds를 기준으로 한 좌표
             Text("Global").bold()
             Text(stringFormat(for: g.frame(in: .global).origin))

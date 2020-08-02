@@ -137,6 +137,9 @@ struct SectionFooterList: View {
             }
         }
         .listStyle(GroupedListStyle())
+        //.listStyle(GroupedListStyle())
+        //.environment(\.horizontalSizeClass, .regular)
+        
         
         
     }
