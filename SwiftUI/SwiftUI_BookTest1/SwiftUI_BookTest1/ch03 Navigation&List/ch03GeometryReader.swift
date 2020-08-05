@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+ 
 struct ch03GeometryReader: View {
     var body: some View {
         // 자식뷰 1개 / 정렬: 센터
@@ -25,7 +25,7 @@ struct ch03GeometryReader: View {
 
 struct ch04GeometryReader_Previews: PreviewProvider {
     static var previews: some View {
-        ch03GeometryReader()
+        ch03GeometryReader().previewDisplayName("GeometryReader")
     }
 }
 
@@ -120,7 +120,6 @@ struct GeometryProxyFrame: View {
             
         }
     }
-    
     
     // 좌표출력 메소드
     func stringFormat(for point: CGPoint) -> String {

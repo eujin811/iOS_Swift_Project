@@ -34,6 +34,10 @@ struct ch03Frame: View {
 struct ch03Frame_Previews: PreviewProvider {
     static var previews: some View {
         ch03Frame()
+//        ForEach(["iPhone 11 Pro", "iPhone 8"], id: \.self) {
+//            ch03Frame().previewDevice(PreviewDevice(rawValue: $0))
+//        }
+        
     }
 }
 
