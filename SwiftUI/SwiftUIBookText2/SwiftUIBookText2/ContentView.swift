@@ -19,6 +19,12 @@ struct ContentView: View {
                     NavigationLink(destination: ch07ScrollPage()) {
                         Text("07 Scroll Page")
                     }
+                    NavigationLink(destination: ch07TabView()) {
+                        Text("07 TabView")
+                    }
+                    NavigationLink(destination: ch07TabViewTag()) {
+                        Text("07 TabViewTag")
+                    }
                 }
             }
             
