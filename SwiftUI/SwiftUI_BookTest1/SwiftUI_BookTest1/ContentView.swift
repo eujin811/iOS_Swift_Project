@@ -71,6 +71,33 @@ struct ContentView: View {
                     }
                 }
                 
+                Section(header: Text("ch05")) {
+//                    NavigationLink(destination: ch05PageSheet()) {
+//                        Text("ch05PageSheet")
+//                    }
+                    NavigationLink(destination: ch05PresentHome()) {
+                        Text("ch05PageSheet")
+                    }
+                    NavigationLink(destination: ch05Alert()) {
+                        Text("ch05 Alert")
+                    }
+                    NavigationLink(destination: ch05ActionSheet()) {
+                        Text("ch05ActionSheet")
+                    }
+                   
+                }
+                
+                Section(header: Text("ch06")) {
+                    NavigationLink(destination: ch06ViewModifier()) {
+                        Text("ch06 ViewModifier")
+                    }
+                    NavigationLink(destination: ch06CustomButton()) {
+                        Text("ch06 CustomButton")
+                    }
+                    NavigationLink(destination: ch06Toggle()) {
+                        Text("ch06 Toggle")
+                    }
+                }
                 
             }
             

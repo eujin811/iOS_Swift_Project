@@ -8,9 +8,12 @@
 
 import SwiftUI
 
+// 새로 판다. AppDelegate, SceneDelegate 필요해서.
 struct ch06UIAppearance: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("Hello, World").navigationBarTitle("UIappearance")
+        }
     }
 }
 
@@ -19,3 +22,7 @@ struct ch06UIAppearance_Previews: PreviewProvider {
         ch06UIAppearance()
     }
 }
+
+
+//MARK: UINavigationBar
+

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SwiftUI_BookTest1
+//  SwiftUI_UIAppearance
 //
-//  Created by YoujinMac on 2020/07/27.
+//  Created by YoujinMac on 2020/08/06.
 //  Copyright © 2020 YoujinMac. All rights reserved.
 //
 
@@ -25,14 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            
-            //content Home
             window.rootViewController = UIHostingController(rootView: contentView)
-            
-            //ch05Home(), PresentHome
-//            window.rootViewController = UIHostingController(rootView: ch05PresentHome())
-            
-            
             self.window = window
             window.makeKeyAndVisible()
         }

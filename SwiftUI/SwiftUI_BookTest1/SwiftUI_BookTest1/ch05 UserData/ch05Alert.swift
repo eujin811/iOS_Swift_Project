@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ch05Alert: View {
+    @State private var showingAlert: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button(action: { self.showingAlert = true } ){
+            Text("Alert")
+        }.alert(isPresented: $showingAlert) {
+            Alert(title: Text("제목"),
+                  message: Text("내용"),
+                  primaryButton: .default(Text("확인"), action: { print("확인") }),
+                  secondaryButton: .cancel(Text("취소")))
+        }
+        
+        
     }
 }
 
