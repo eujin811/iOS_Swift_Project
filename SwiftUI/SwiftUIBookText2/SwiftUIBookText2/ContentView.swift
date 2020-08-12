@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             List {
@@ -26,9 +27,59 @@ struct ContentView: View {
                         Text("07 TabViewTag")
                     }
                 }
+                
+                Section(header: Text("ch08")) {
+                    NavigationLink(destination: ch08AnimationSample()) {
+                        Text("08 AnimationSample")
+                    }
+                    NavigationLink(destination: ch08AnimationBasic()) {
+                        Text("08 AnimationBasic")
+                    }
+                    NavigationLink(destination: ch08AnimationSpring()) {
+                        Text("08 AnimationSpring")
+                    }
+                    NavigationLink(destination: ch08AnimationControl()) {
+                        Text("08 AnimationControl")
+                    }
+                    NavigationLink(destination: ch08TransitionBasic()) {
+                        Text("08 TransitionBasic")
+                    }
+                    NavigationLink(destination: ch08TransitionCompose()) {
+                        Text("08 TransitionCompose")
+                    }
+                    NavigationLink(destination: ch08CustomAnimation()) {
+                        Text("08 CustomAnimation")
+                    }
+                    
+                }
+                
+                Section(header: Text("ch09")) {
+                    NavigationLink(destination: ch09Gesture()) {
+                        Text("09 Gesture")
+                    }
+                    NavigationLink(destination: ch09DragGesture()) {
+                        Text("09 DragGesture")
+                    }
+                    NavigationLink(destination: ch09MagnificationGesture()) {
+                        Text("09 MagnificationGesture")
+                    }
+                    NavigationLink(destination: ch09RotationGesture()) {
+                        Text("09 RotationGesture")
+                    }
+                    NavigationLink(destination: ch09GestureModifier()) {
+                        Text("09 GestureModifier")
+                    }
+                    NavigationLink(destination: ch09ContextMenu()) {
+                        Text("ch09 ContextMenu")
+                    }
+                }
+                
             }
             
         }.edgesIgnoringSafeArea(.top)
+        
+        
+        
     }
 }
 
