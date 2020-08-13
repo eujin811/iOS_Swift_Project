@@ -70,13 +70,26 @@ struct ContentView: View {
                         Text("09 GestureModifier")
                     }
                     NavigationLink(destination: ch09ContextMenu()) {
-                        Text("ch09 ContextMenu")
+                        Text("09 ContextMenu")
                     }
                     NavigationLink(destination: ch09ContextMenu2()) {
-                                           Text("ch09 ContextMenu2")
-                                       }
+                        Text("09 ContextMenu2")
+                    }
                 }
                 
+                
+                
+                Section(header: Text("ch10")) {
+                    NavigationLink(destination: ch10FormSample()) {
+                        Text("10 FormSample")
+                    }
+                    NavigationLink(destination: ch10Form_View_Controller()) {
+                        Text("10 Form_View_Controller")
+                    }
+                    NavigationLink(destination: ch10Picker()) {
+                        Text("10 Picker")
+                    }
+                }
             }
             
         }.edgesIgnoringSafeArea(.top)
