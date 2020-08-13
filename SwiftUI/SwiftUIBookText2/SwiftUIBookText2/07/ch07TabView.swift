@@ -14,7 +14,8 @@ struct ch07TabView: View {
             VStack {
                 Text("첫 번째 탭").font(.largeTitle)
                 Image("swift")
-            }.tabItem {
+            }
+            .tabItem {
                 Image(systemName: "house")
                 Text("아이템 1")
             }
@@ -28,9 +29,10 @@ struct ch07TabView: View {
                     Text("아이템 2")
             }
             
-            SomeView().tabItem {
-                Image(systemName: "person")
-                Text("아이템")
+            SomeView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("아이템")
             }
             
         }

@@ -72,6 +72,9 @@ struct ContentView: View {
                     NavigationLink(destination: ch09ContextMenu()) {
                         Text("ch09 ContextMenu")
                     }
+                    NavigationLink(destination: ch09ContextMenu2()) {
+                                           Text("ch09 ContextMenu2")
+                                       }
                 }
                 
             }

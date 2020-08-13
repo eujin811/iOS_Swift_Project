@@ -16,6 +16,7 @@
 		96322DF724E0CD7C0002C5F4 /* ch07ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DF624E0CD7C0002C5F4 /* ch07ScrollView.swift */; };
 		96322DF924E0EAB80002C5F4 /* ch07ScrollPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DF824E0EAB80002C5F4 /* ch07ScrollPage.swift */; };
 		96322DFB24E0FF060002C5F4 /* ch07TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DFA24E0FF060002C5F4 /* ch07TabView.swift */; };
+		974E2FF924E4F9A4006CD0B4 /* ch09ContextMenu2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974E2FF824E4F9A4006CD0B4 /* ch09ContextMenu2.swift */; };
 		974F9B9024E370F700681B41 /* ch08CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974F9B8F24E370F700681B41 /* ch08CustomAnimation.swift */; };
 		975ED07B24E2564E005204DA /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 975ED07A24E2564E005204DA /* cat.jpeg */; };
 		975ED07E24E25679005204DA /* ch08AnimationSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975ED07D24E25679005204DA /* ch08AnimationSample.swift */; };
@@ -46,6 +47,7 @@
 		96322DF624E0CD7C0002C5F4 /* ch07ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07ScrollView.swift; sourceTree = "<group>"; };
 		96322DF824E0EAB80002C5F4 /* ch07ScrollPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07ScrollPage.swift; sourceTree = "<group>"; };
 		96322DFA24E0FF060002C5F4 /* ch07TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07TabView.swift; sourceTree = "<group>"; };
+		974E2FF824E4F9A4006CD0B4 /* ch09ContextMenu2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch09ContextMenu2.swift; sourceTree = "<group>"; };
 		974F9B8F24E370F700681B41 /* ch08CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch08CustomAnimation.swift; sourceTree = "<group>"; };
 		975ED07A24E2564E005204DA /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat.jpeg; path = ../../../../../../Downloads/cat.jpeg; sourceTree = "<group>"; };
 		975ED07D24E25679005204DA /* ch08AnimationSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch08AnimationSample.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				9792F78B24E3CB6900A19510 /* ch09GestureModifier.swift */,
 				9792F78D24E3D2BC00A19510 /* ch09GestureMask.swift */,
 				9792F78F24E3D98700A19510 /* ch09ContextMenu.swift */,
+				974E2FF824E4F9A4006CD0B4 /* ch09ContextMenu2.swift */,
 			);
 			path = 09;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				975ED08A24E27F58005204DA /* ch08TransitionCompose.swift in Sources */,
 				96322DE024E0CD4A0002C5F4 /* AppDelegate.swift in Sources */,
 				96322DF924E0EAB80002C5F4 /* ch07ScrollPage.swift in Sources */,
+				974E2FF924E4F9A4006CD0B4 /* ch09ContextMenu2.swift in Sources */,
 				96322DE224E0CD4A0002C5F4 /* SceneDelegate.swift in Sources */,
 				9799C61E24E1265B00A275E6 /* ch07TabViewTag.swift in Sources */,
 				96322DE424E0CD4A0002C5F4 /* ContentView.swift in Sources */,
