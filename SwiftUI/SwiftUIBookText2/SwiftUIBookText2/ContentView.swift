@@ -89,6 +89,9 @@ struct ContentView: View {
                     NavigationLink(destination: ch10Picker()) {
                         Text("10 Picker")
                     }
+                    NavigationLink(destination: ch10TextField()) {
+                        Text("10 TextField")
+                    }
                 }
             }
             

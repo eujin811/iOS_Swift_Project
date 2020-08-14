@@ -27,6 +27,11 @@ struct ch10TextField: View {
                 TextField("PlainTextField",text: .constant("")).textFieldStyle(PlainTextFieldStyle())
                 TextField("", text: .constant("RoundedTextFieldStyle")).textFieldStyle(RoundedBorderTextFieldStyle())
                 
+                
+//                TextField("line", text: .constant("")).onAppear { UITextField.appearance().borderStyle = .line }
+                
+                TextField("bazel", text: .constant("")).onAppear { UITextField.appearance().borderStyle = .bezel }
+                
                 HStack {
                     Image(systemName: "envelope").frame(width: 30)
                     TextField("이메일", text: $email)//.textFieldStyle(RoundedBorderTextFieldStyle())

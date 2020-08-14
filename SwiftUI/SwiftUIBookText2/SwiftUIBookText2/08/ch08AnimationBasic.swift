@@ -19,7 +19,7 @@ struct ch08AnimationBasic: View {
                        .scaleEffect(reduction2 ? 0.7 : 1)
                        .onTapGesture {
                            withAnimation(.easeInOut) {
-                               self.blur2.toggle()
+                               self.blur2.toggle()  //=true
                                self.reduction2.toggle()
                            }
                    }
