@@ -16,6 +16,7 @@
 		96322DF724E0CD7C0002C5F4 /* ch07ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DF624E0CD7C0002C5F4 /* ch07ScrollView.swift */; };
 		96322DF924E0EAB80002C5F4 /* ch07ScrollPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DF824E0EAB80002C5F4 /* ch07ScrollPage.swift */; };
 		96322DFB24E0FF060002C5F4 /* ch07TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DFA24E0FF060002C5F4 /* ch07TabView.swift */; };
+<<<<<<< Updated upstream
 		974E2FF924E4F9A4006CD0B4 /* ch09ContextMenu2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974E2FF824E4F9A4006CD0B4 /* ch09ContextMenu2.swift */; };
 		974E300124E51B12006CD0B4 /* ch10FormSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974E300024E51B12006CD0B4 /* ch10FormSample.swift */; };
 		974E300324E5200B006CD0B4 /* ch10Form_View&Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974E300224E5200B006CD0B4 /* ch10Form_View&Controller.swift */; };
@@ -37,6 +38,9 @@
 		9792F79024E3D98700A19510 /* ch09ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9792F78F24E3D98700A19510 /* ch09ContextMenu.swift */; };
 		9799C61E24E1265B00A275E6 /* ch07TabViewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9799C61D24E1265B00A275E6 /* ch07TabViewTag.swift */; };
 		97ABCB1F24E3A4AD004C77C0 /* ch09Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ABCB1E24E3A4AD004C77C0 /* ch09Gesture.swift */; };
+=======
+		96322DFD24E105B80002C5F4 /* ch07TabViewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96322DFC24E105B80002C5F4 /* ch07TabViewTag.swift */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,7 @@
 		96322DF624E0CD7C0002C5F4 /* ch07ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07ScrollView.swift; sourceTree = "<group>"; };
 		96322DF824E0EAB80002C5F4 /* ch07ScrollPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07ScrollPage.swift; sourceTree = "<group>"; };
 		96322DFA24E0FF060002C5F4 /* ch07TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07TabView.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		974E2FF824E4F9A4006CD0B4 /* ch09ContextMenu2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch09ContextMenu2.swift; sourceTree = "<group>"; };
 		974E300024E51B12006CD0B4 /* ch10FormSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch10FormSample.swift; sourceTree = "<group>"; };
 		974E300224E5200B006CD0B4 /* ch10Form_View&Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ch10Form_View&Controller.swift"; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 		9792F78F24E3D98700A19510 /* ch09ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch09ContextMenu.swift; sourceTree = "<group>"; };
 		9799C61D24E1265B00A275E6 /* ch07TabViewTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07TabViewTag.swift; sourceTree = "<group>"; };
 		97ABCB1E24E3A4AD004C77C0 /* ch09Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch09Gesture.swift; sourceTree = "<group>"; };
+=======
+		96322DFC24E105B80002C5F4 /* ch07TabViewTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ch07TabViewTag.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +142,11 @@
 				96322DF624E0CD7C0002C5F4 /* ch07ScrollView.swift */,
 				96322DF824E0EAB80002C5F4 /* ch07ScrollPage.swift */,
 				96322DFA24E0FF060002C5F4 /* ch07TabView.swift */,
+<<<<<<< Updated upstream
 				9799C61D24E1265B00A275E6 /* ch07TabViewTag.swift */,
+=======
+				96322DFC24E105B80002C5F4 /* ch07TabViewTag.swift */,
+>>>>>>> Stashed changes
 			);
 			path = 07;
 			sourceTree = "<group>";
@@ -273,8 +285,12 @@
 				96322DF924E0EAB80002C5F4 /* ch07ScrollPage.swift in Sources */,
 				974E2FF924E4F9A4006CD0B4 /* ch09ContextMenu2.swift in Sources */,
 				96322DE224E0CD4A0002C5F4 /* SceneDelegate.swift in Sources */,
+<<<<<<< Updated upstream
 				9799C61E24E1265B00A275E6 /* ch07TabViewTag.swift in Sources */,
 				974E300324E5200B006CD0B4 /* ch10Form_View&Controller.swift in Sources */,
+=======
+				96322DFD24E105B80002C5F4 /* ch07TabViewTag.swift in Sources */,
+>>>>>>> Stashed changes
 				96322DE424E0CD4A0002C5F4 /* ContentView.swift in Sources */,
 				96322DF724E0CD7C0002C5F4 /* ch07ScrollView.swift in Sources */,
 			);

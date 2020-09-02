@@ -2,13 +2,18 @@
 //  ch07TabViewTag.swift
 //  SwiftUIBookText2
 //
+<<<<<<< Updated upstream
 //  Created by Youjin on 2020/08/10.
+=======
+//  Created by YoujinMac on 2020/08/10.
+>>>>>>> Stashed changes
 //  Copyright © 2020 YoujinMac. All rights reserved.
 //
 
 import SwiftUI
 
 struct ch07TabViewTag: View {
+<<<<<<< Updated upstream
     enum TabItems { case A, B }
     @State private var selectedTab = 0
     @State private var selected = TabItems.A
@@ -64,6 +69,16 @@ struct ch07TabViewTag: View {
         //                }
         //
         //            }
+=======
+    @State private var selectedTab = 0
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            ForEach(0..<3) { index in
+                Text("태그 ")
+            }
+            
+        }
+>>>>>>> Stashed changes
         
     }
 }
@@ -73,4 +88,7 @@ struct ch07TabViewTag_Previews: PreviewProvider {
         ch07TabViewTag()
     }
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
